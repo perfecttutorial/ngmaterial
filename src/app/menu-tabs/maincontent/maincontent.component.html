@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit(mainCont)" #maincontentForm="ngForm">
+ <!--  <form  #maincontentForm="ngForm"> -->
+  <div class="form-group" *ngIf="response">
+    <label for="selectDT">Example select</label>
+    <select *ngIf="response.selectoptiontype" class="form-control" id="selectDT" name="selectDT" [(ngModel)]="mainCont.selectDT" >
+      <option *ngFor="let dt of response.selectoptiontype" 
+       [value]="dt.Id" >{{dt.name}}</option>  
+    </select>
+    <div *ngIf="errormsg">
+      {{errormsg}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="state">Example multiple select</label>
+    <input type="text" class="form-control" id="state"
+              [(ngModel)]="mainCont.state"  name="state"
+               >
+  </div>
+ 
+  <button class="btn btn-primary" type="submit">Save</button>
+</form>
+
+{{maincontentForm.value | json}}
+

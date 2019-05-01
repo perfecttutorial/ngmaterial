@@ -1,0 +1,7 @@
+{
+    "customers":"Angular customers",
+    "selectoptiontype":[
+        {"Id":"ATM","name":"ATM"},
+        {"Id":"VTM","name":"VTM"}
+    ]
+    }
